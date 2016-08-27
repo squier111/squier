@@ -285,8 +285,8 @@ function getPerimeter(arr) {
   return top.concat(right, bottom, left);
 }
 
-// var result = getPerimeter(matrix);
-// console.log(result);
+var result = getPerimeter(matrix);
+console.log(result);
 
 
 
