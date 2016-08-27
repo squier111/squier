@@ -292,7 +292,8 @@ console.log(result);
 
 
 
-
+var result = getPerimeter(matrix);
+console.log(result);
 
 
 
