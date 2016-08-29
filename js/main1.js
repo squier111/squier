@@ -43,7 +43,7 @@ var arr = [ 45 , '45' , 20 , 30]
 
 
 
-
+asddasdasdadasdasd
 // Оператор typeof
 // Оператор typeof возвращает тип аргумента.
 Синтаксис оператора: typeof x.
