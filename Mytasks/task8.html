@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>buttons</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				arr = [];
+				function buttons(size) {
+				for (var i = 1; i < size; i++) {
+					var btn = '<a href=#>книпка '  + i + '</a>';
+					arr.push(btn);
+					$('body').append(btn);
+				}
+			}
+			var btns = buttons(11);
+			var ashki = $('a');
+			for (var i = 0; i < arr.length; i++) {
+				(function(index) {
+					$(ashki[index]).addClass('index'+i);
+					$(ashki[index]).click(function(){
+						alert(index+1);
+						return false;
+					});
+				})(i);
+			}
+			});
+		</script>
+		<style>
+			a {
+				display: block;
+				background: yellow;
+				border: 1px #000 solid;
+				border-radius: 5px;
+				width: 150px;
+				font-size: 20px;
+				color: #000;
+				line-height: 30px;
+				text-align: center;
+				text-decoration: none;
+				height: 30px;
+				margin: 0 auto 10px auto;
+			}
+
+		</style>
+	</head>
+	<body>
+	</body>
+</html>

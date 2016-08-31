@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Clock</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				timerid = setInterval(tiktak, 1000);
+				function tiktak(){
+					console.clear();
+					var date = new Date;
+					var h = date.getHours();
+					if (h < 10) h = '0' + h;
+					var m = date.getMinutes();
+					if (m < 10) m = '0' + m;
+					var s = date.getSeconds();
+					if (s < 10) s = '0' + s;
+					var name =  "myClock" + h + ":" + m + ":" + s ;
+					// document.body.children[0].innerHTML = name;
+					$('p').text(name);
+					console.log("MyClock"+ "" + h + ":" + m + ":" + s);
+					sRot = (s*6)-90;
+					mRot = (m*6)-90;
+					if (h > 12) {
+						h = h - 12;
+					}
+					hRot = (h*30)-180;
+					if (sRot > 360) {
+						sRot = 90;
+						mRot = 90;
+						hRot = 180;
+					}
+					$('.s').css({
+						'transform': 'rotate('+ sRot  +'deg)'
+					});
+					$('.m').css({
+						'transform': 'rotate('+ mRot  +'deg)'
+					});
+					$('.h').css({
+						'transform': 'rotate('+ hRot  +'deg)'
+					});
+				};
+			})
+		</script>
+		<style>
+			p {
+				text-align: center;
+				font-size: 100px;
+				line-height: 100px;
+				color: cornflowerblue;
+			}
+			.clock {
+/*				border: 1px #000 solid;*/
+				width: 511px;
+				height: 511px;
+				border-radius: 50%;
+				background: url(images/shablon-chasov.jpg) no-repeat 50% 50%;
+				margin: 0 auto;
+				position: relative;
+			}
+			.h {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				background: blue;
+				width: 10px;
+				height: 10px;
+				border-radius: 50%;
+				margin: -7px 0 0 -3px;
+			}
+			.m {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				background: green;
+				width: 10px;
+				height: 10px;
+				border-radius: 50%;
+				margin: -7px 0 0 -3px;
+			}
+			.s {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				background: red;
+				width: 10px;
+				height: 10px;
+				border-radius: 50%;
+				margin: -7px 0 0 -3px;
+			}
+			.h:before {
+				content:'';
+				width: 2px;
+				height: 150px;
+				background: blue;
+				position: absolute;
+				top: 0;
+				left: 4px;
+			}
+			.m:before {
+				content:'';
+				width: 200px;
+				height: 1px;
+				background: green;
+				position: absolute;
+				top: 5px;
+				left: 0;
+			}
+			.s:before {
+				content:'';
+				width: 250px;
+				height: 1px;
+				background: red;
+				position: absolute;
+				top: 5px;
+				left: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<p></p>
+		<div></div>
+		<div class="clock">
+			<span class="h"></span>
+			<span class="m"></span>
+			<span class="s"></span>
+		</div>
+	</body>
+</html>
